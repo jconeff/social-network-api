@@ -1,45 +1,45 @@
-const {
-    Schema,
-    model
-} = require('mongoose');
+const { Schema, model } = require('mongoose');
 
-
-const UserSchema = new Schema({
-    username: {
-        type: String,
-        unique: true,
-        required: 'Please provide a username!',
-        trim: true
+const UserSchema = new Schema(
+    {
+        username: {
+            type: String,
+            required: true,
+            trim: true,
+            unique: true
+        },
+        email: {
+            type: String,
+            required: true,
+            unique: true,
+            validate: {
+                validator: function (v) {
+                    return /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/.test(v);
+                },
+                message: props => `${props.value} is not a valid email!`
+            }
+        },
+        thoughts: [
+            {
+                type: Schema.Types.ObjectId,
+                ref: 'Thoughts'
+            }
+        ],
+        friends: [
+            {
+                type: Schema.Types.ObjectId,
+                ref: 'User'
+            }
+        ]
     },
-
-    email: {
-        type: String,
-        required: 'Please provide an email!',
-        unique: true,
-        validate: {
-            validator: function (v) {
-                return /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/.test(v);
-            },
-            message: props => `${props.value} not a valid email!`
+    {
+        toJSON: {
+            virtuals: true
         }
-    },
-    thoughts: [{
-        type: Schema.Types.ObjectId,
-        ref: 'Thoughts'
-    }],
-    friends: [{
-        type: Schema.Types.ObjectId,
-        ref: 'User'
-    }]
-}, {
-    toJSON: {
-        virtuals: true
     }
-});
+);
 
-
-//Friend Count, lenght of Users friends
-UserSchema.virtual('friendCount').get(function(){
+UserSchema.virtual('friendCount').get(function () {
     return this.friends.length;
 });
 
