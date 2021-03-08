@@ -17,7 +17,7 @@ THEN I am able to successfully create and delete reactions to thoughts and add a
 * [License](#License)
 * [Video Tutorial](#Video-Tutorial)
 * [Screenshot](#Screenshot)
-* [Contribution](#Contribution)
+* [Credits](#Credits)
 
 ## Installation
 To install, you will need the following npm package dependencies: 
@@ -35,7 +35,7 @@ npm install
 This application is under the [ISC](https://opensource.org/licenses/ISC) license.
 
 ## Screenshot
+![Screenshot 2021-03-08 154449](https://user-images.githubusercontent.com/65797801/110379812-4a157e80-8025-11eb-8039-97d39ef2e0d2.png)
 
-
-## Contribution
-
+## Credits
+Coded by [Jessica Coneff](https://github.com/jconeff)
