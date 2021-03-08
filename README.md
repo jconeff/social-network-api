@@ -28,6 +28,7 @@ npm install
 ## Built With
 * Express.js
 * MongoDB
+* Mongoose
 
 ## Video Tutorial
 [Video Tutorial Here!](https://drive.google.com/file/d/1ltYlD-wUtMRKI6xybAdu6Cv-ev30c0sZ/view)
