@@ -15,6 +15,7 @@ THEN I am able to successfully create and delete reactions to thoughts and add a
 * [Installation](#Installation)
 * [Built With](#Built-With)
 * [License](#License)
+* [Video Tutorial](#Video-Tutorial)
 * [Screenshot](#Screenshot)
 * [Contribution](#Contribution)
 
@@ -27,6 +28,8 @@ npm install
 ## Built With
 * Express.js
 * MongoDB
+
+## Video Tutorial
 
 ## License
 This application is under the [ISC](https://opensource.org/licenses/ISC) license.
